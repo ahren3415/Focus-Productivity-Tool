@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Focus App</title>
+</head>
+<body>
+
+<h1>Focus Playlist Generator</h1>
+
+<form method="post">
+    <label>Task:</label>
+    <select name="task">
+        <option value="focus">Focus</option>
+        <option value="study">Study</option>
+    </select>
+
+    <br><br>
+
+    <label>Time (minutes):</label>
+    <input type="number" name="time" required>
+
+    <br><br>
+
+    <button type="submit">Generate</button>
+</form>
+
+<hr>
+
+{% if playlist %}
+<h2>Recommended Playlist</h2>
+<ul>
+{% for song in playlist %}
+    <li>{{ song.title }} — {{ song.artist }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>
