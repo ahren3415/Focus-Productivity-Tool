@@ -1,10 +1,9 @@
 from flask import Flask, request, session, url_for, jsonify
 import csv
 import random
-
+import os
 app = Flask(__name__)
-app.secret_key = 'your_super_secret_key_here'
-
+app.secret_key = os.environ.get('APP_SECRET_KEY', 'a_temporary_fallback_key_for_local_testing')
 
 # --- Python Helper Functions (Unchanged) ---
 
